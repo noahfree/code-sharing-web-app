@@ -1,0 +1,7 @@
+<div class="fontChange">
+    <p (click)="shrinkText()">-</p>
+    <p (click)="enlargeText()">+</p>
+</div>
+<div class="wrapper" *ngIf="code != null && languageClass != ''"> 
+    <pre class="line-numbers"><code class="code" [ngClass]="languageClass" [style.font-size]="textSize">{{ code }}</code></pre>
+</div>

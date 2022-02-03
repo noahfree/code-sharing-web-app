@@ -1,0 +1,54 @@
+
+<nav class="navbar navbar-expand-lg d-lg-flex align-items-center navbar-dark" (click)="verifyUser()">
+    <a class="navbar-brand" routerLink="/">snipCode<span id="scissors" class="material-icons">
+      content_cut
+      </span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="post">Post</a>
+        </li>
+      </ul>
+      <div class="my-2 my-lg-0">
+        <li *ngIf="loggedIn == true" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <!-- <img src="../../../assets/pic.JPG" alt="Profile Picture"> -->
+              <span>{{username}}</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" routerLink="profile/{{ userModel.profileId }}" (click)=viewProfile(userModel.profileId)>View Profile</a>
+              <div class="dropdown-divider"></div>
+              <a (click)="logOut()" class="dropdown-item logOut">Logout</a>
+            </div>
+          </li>
+          <li *ngIf="loggedIn == false" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Login
+            </a>
+            <div class="login login-dropdown dropdown-menu dropdown-menu-right">
+                <form class="px-4 py-3" [formGroup]="signInForm" (ngSubmit)=onSubmit()>
+                  <div class="form-group">
+                    <input formControlName="username" type="text" class="form-control" id="loginEmail" placeholder="Username">
+                  </div>
+                  <div class="form-group">
+                  
+                    <input formControlName="password" type="password" class="form-control" id="loginPassword" placeholder="Password">
+                  </div>
+                  <button type="submit" class="btn btn-primary" [disabled]="!signInForm.valid">Sign in</button>
+                  <!-- <p *ngIf="msg != ''" class="text-danger">{{msg}}</p>
+                  <span class="navbar-loading" *ngIf="loading == true">Loading...</span> -->
+                </form>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" routerLink="create-account">Create an account</a>
+              </div>
+          </li>
+        </div>
+    </div>
+  </nav>

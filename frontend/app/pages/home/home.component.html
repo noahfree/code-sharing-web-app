@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <!-- <div class="w-25 side-bar">sidebar</div> -->
+    <div class="w-100 feed">
+        <h2 class="feed-title">{{ pageTitle }}</h2>
+        <p class="loadingIcon" *ngIf="posts.length == 0">Loading...</p>
+        <div class="post" *ngFor="let author of authors; let i = index"> 
+        <!-- *ngFor="let post of posts; let i = index"> -->
+            <div class="user-info" routerLink="profile/{{ posts[i].authorId }}" (click)="getUserPosts(posts[i].authorId, author)">
+                    <!-- <img src={{sampleImage}} alt="Profile Picture" class="pfp"> -->
+                    <span  class="profileImg">{{ author.charAt(0).toUpperCase() }}</span>
+                    <!-- ng-style="{'background-color': jsonObj[(authors[i].charAt(0).toUpperCase())] }" -->
+                <div class="name-date-container">
+                    <span class="post-user">{{  author }}</span>
+                    <span class="post-time">{{ posts[i].timestamp }}</span>
+                </div>
+            </div>
+            <div class="title-desc" (click)="routeFromHome()" routerLink="post/{{i}}">
+                <h3 class="post-title">{{ posts[i].title }}</h3>
+                <hr>
+                <p class="description">{{ posts[i].description }}</p>
+            </div>
+  
+            
+            <div class="code">
+                <div>
+                    <pre class="line-numbers"><code class="" [ngClass]="'language-' + posts[i].language">{{ posts[i].code }}</code></pre>
+                </div> 
+                <p *ngIf="posts[i].language != ''">code snippet written in {{ posts[i].language }}</p>
+            </div>     
+        </div>
+    </div>
+</div>
+
+

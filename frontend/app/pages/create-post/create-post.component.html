@@ -1,0 +1,86 @@
+<h1 class="title">Make a Post!</h1>
+<section class="content">
+  <form [formGroup]="createPostForm" (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+      <label for="Title" class="form-label">Title</label>
+      <input
+        type="textarea"
+        class="form-control"
+        id="Title"
+        formControlName="title"
+        placeholder="Title"
+      />
+    </div>
+    <div class="mb-4">
+      <label for="Description" class="form-label">Description</label>
+      <input
+        type="textarea"
+        class="form-control"
+        id="Description"
+        formControlName="description"
+        placeholder="Description"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label for="code" class="form-label">Code</label>
+      <textarea
+        class="form-control textarea"
+        id="code"
+        rows="5"
+        formControlName="code"
+        placeholder="Paste your code snippet here"
+      ></textarea>
+    </div>
+    <!-- choose dropdown -->
+    <div>
+      <label for="inlineFormCustomSelectPref" class="form-label">Language</label>
+      <select
+        class="custom-select my-1 mr-sm-2"
+        id="inlineFormCustomSelectPref"
+        name="language"
+        formControlName="language"
+      >
+        <option selected value="None" disabled>Choose Language</option>
+        <option value="shell">Bash</option>
+        <option value="css">CSS</option>
+        <option value="c">C</option>
+        <option value="csharp">C#</option>
+        <option value="cpp">C++</option>
+        <option value="go">Go</option>
+        <option value="html">HTML</option>
+        <option value="java">Java</option>
+        <option value="javascript">JavaScript</option>
+        <option value="typescript">TypeScript</option>
+        <option value="json">JSON</option>
+        <option value="php">PHP</option>
+        <option value="python">Python</option>
+        <option value="ruby">Ruby</option>
+        <option value="sql">SQL</option>
+        <option value="xml">XML</option>
+        <option value="yaml">YAML</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <!-- <div class="mb-4">
+      <label for="codeLink" class="form-label">Link to Running Code</label>
+      <input
+        type="textarea"
+        class="form-control"
+        id="codeLink"
+        formControlName="codeLink"
+        placeholder="Link"
+      />
+    </div>
+    <div class="mb-4">
+      <label for="formFile" class="form-label">Picture</label>
+      <input
+        type="file"
+        id="formFile"
+        formControlName="file"
+      />
+    </div> -->
+    <button type="submit" class="btn btn-primary" *ngIf="createPostForm.valid">Submit</button>
+  </form>
+</section>

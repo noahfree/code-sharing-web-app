@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/prismjs/plugins/toolbar/prism-toolbar.css";
+@import "../node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css";
+@import "../node_modules/prismjs/themes/prism-tomorrow";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+    list-style: none;
+}
+body {
+    padding-top: 56px;
+    background: white;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1rem; /* 1em */
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1rem;
+}
+
+.container-fluid {
+	position: relative;
+	z-index: -2;
+}
+
+.loadingIcon {
+    font-family: "Poppins";
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(70, 70, 70);
+    margin-top: 40px;
+}

@@ -1,0 +1,48 @@
+
+<!-- <p>{{currentUser.username}}</p>
+<p>{{currentUser.email}}</p>
+<p>{{currentUser.bio}}</p> -->
+<!-- <router-outlet></router-outlet> -->
+
+<div class="container-fluid d-flex">
+    <!-- <div class="w-25 side-bar">sidebar</div> -->
+    <div class="w-75 feed" *ngIf="author.id != -1">
+        <div class="profileHeader">
+        <span  class="profileIcon">{{ author.username.charAt(0).toUpperCase() }}</span>
+        <div>
+            <h2 class="feed-name">{{ author.username }}</h2>
+            <h5 class="feed-email">{{ author.email }}</h5>
+        </div>
+        </div>
+        <p class="feed-bio">{{ author.bio }}</p>
+        <hr>
+        <p *ngIf="posts.length == 0" class="loadingIcon">This user has no posts yet</p>
+        <div class="post" id="post" *ngFor="let post of posts; let i = index">
+            <div class="deleteIcon" id="deleteIcon">
+                <img src="assets/deleteIcon.png" alt="DELETE POST" *ngIf="username == author.username" (click)="deletePost(post.id, i)">
+            </div>
+            <div id="user-info">
+                    <span  class="profileImg">{{ author.username.charAt(0).toUpperCase() }}</span>
+                    <!-- ng-style="{'background-color': jsonObj[(authors[i].charAt(0).toUpperCase())] }" -->
+                <div class="name-date-container">
+                    <span class="post-name">{{  author.username }}</span>
+                    <span class="post-time">{{ post.timestamp }}</span>
+                </div>
+            </div>
+            <div class="title-desc" (click)="routeFromProfile()" routerLink="/post/{{i}}">
+                <h3 class="post-title">{{ post.title }}</h3>
+                <hr>
+                <p class="description">{{ post.description }}</p>
+            </div>
+  
+            
+            <div class="code">
+                <div class="line-numbers">
+                    <pre><code class="" [ngClass]="'language-' + post.language">{{ post.code }}</code></pre>
+                </div>
+                <p *ngIf="post.language != ''">code snippet written in {{ post.language }}</p>
+            </div>     
+        </div>
+    </div>
+    <p class="loadingIcon" *ngIf="author.id == -1">Loading...</p>
+</div>

@@ -1,0 +1,97 @@
+.loadingIcon {
+    font-family: "Poppins";
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(70, 70, 70);
+    margin-top: 40px;
+}
+
+code {
+    color: white;
+    text-shadow: none;
+}
+pre.line-numbers {
+    border: none;
+    border-radius: 0px;
+    background-color: black;
+}
+
+#post {
+    padding: 0 0 30px;
+}
+
+.profileIcon {
+    padding: 8px;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    border-radius: 50%;
+    margin-right: 16px; 
+}
+
+div#user-info {
+    display: flex;
+}
+
+
+.profileHeader {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.post-name {
+    font-weight: bold;
+    cursor: default;
+}
+
+.feed-name {
+    font-size: 1.4em;
+    margin: 0 auto 0;
+}
+
+.feed-email {
+    font-size: 0.8em;
+    margin: 0 auto;
+}
+
+.feed-bio {
+    
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    width: 80%;
+    margin: 10px auto;
+}
+
+.deleteIcon {
+    margin: 0;
+    min-height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0;
+}
+
+#deleteIcon {
+    margin: 0;
+    width: 100%;
+}
+
+.deleteIcon img {
+    width: 40px;
+    height: 40px;
+    opacity: 30%;
+    cursor: pointer;
+    transition: opacity 0.5s ease;
+    transform: translate(-15px, 15px);
+}
+
+.deleteIcon img:hover {
+    opacity: 90%;
+}

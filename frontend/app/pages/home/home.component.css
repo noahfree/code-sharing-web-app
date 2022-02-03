@@ -1,0 +1,163 @@
+.container-fluid {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.loadingIcon {
+    font-family: "Poppins";
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(70, 70, 70);
+}
+
+.side-bar {
+    background-color: rgb(25, 25, 25);
+    width: 25%;
+    color: white;
+}
+
+.feed {
+    overflow: auto;
+    padding: 20px;
+}
+
+.feed-title {
+    font-family: "Poppins";
+    font-weight: 800;
+    color:rgb(70, 70, 70);
+    font-size: 1.4em;
+    width: 80%;
+    margin: 0 auto 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+}
+
+.pfp-container {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.profileImg {
+    padding: 8px;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    border-radius: 50%;
+    margin-right: 16px; 
+}
+
+.post {
+    z-index: 1;
+    margin: 25px auto;
+    background-color: white;
+    width: 80%;
+    padding: 30px 0;
+    border-radius: 2px;
+    transition: transform 0.5s ease;
+    box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.1);
+    cursor:default;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+}
+
+.post > div {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.code {
+    margin: 0 auto;
+    width: 80%;
+    position: relative;
+}
+
+.pfp {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+.user-info {
+    display: flex;
+    cursor: pointer;
+}
+.user-info:hover {
+    color: rgb(100, 100, 100);
+}
+
+.post-user {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.post-time {
+    color: rgb(70, 70, 70);
+    font-size: 0.8em;
+}
+
+.post-user, .post-time {
+    display: block;
+    font-family: arial;
+}
+
+.title-desc {
+    width: 80%;
+    cursor: pointer;
+}
+.title-desc:hover {
+    color: rgb(100, 100, 100);
+}
+
+.post-title {
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.description{
+    font-size: 0.9em;
+}
+
+.code p {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+code {
+    font-size: 0.8em;
+    color: white;
+    text-shadow: none;
+}
+pre {
+    padding: 10px 10px 10px 60px;
+    background-color: black;
+}
+pre.line-numbers {
+    border: none;
+    border-radius: 0px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    line-height: 14px;
+}
+
+pre.line-numbers::-webkit-scrollbar {
+    display: none;
+}

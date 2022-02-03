@@ -1,0 +1,63 @@
+<h2 class="title">Create an Account</h2>
+<form [formGroup]="createAccountForm" (ngSubmit)=onSubmit()>
+    <div class="form-row">
+
+        <label for="username">Username</label>
+        <span class="text-danger" *ngIf="createAccountForm.get('username')?.errors && createAccountForm.get('username')?.hasError('required')">*</span>
+        <input formControlName="username" type="email" class="form-control" id="username">
+      
+        <label for="email">Email</label>
+        <span class="text-danger" *ngIf="createAccountForm.get('email')?.errors && createAccountForm.get('email')?.hasError('required')">*</span>
+        <input (change)="emailValid()" formControlName="email" type="email" class="form-control" id="email">
+ 
+    </div>
+    <div class="form-row">
+
+          <label for="password">Password</label>
+          <span class="text-danger" *ngIf="createAccountForm.get('password')?.errors && createAccountForm.get('password')?.hasError('required')">*</span>
+          <input formControlName="password" (change)="passwordMatch()" type="password" class="form-control" id="password">
+        
+            <label for="confirm-password">Confirm Password</label>
+            <span class="text-danger" *ngIf="createAccountForm.get('confirm')?.errors && createAccountForm.get('confirm')?.hasError('required')">*</span>
+            <input formControlName="confirm" (change)="passwordMatch()" type="password" class="form-control" id="confirm-password">
+      
+    </div>
+    <div class="form-row">
+        <label for="email">Bio</label>
+        <span class="text-danger" *ngIf="createAccountForm.get('bio')?.errors && createAccountForm.get('bio')?.hasError('required')">*</span>
+        <textarea formControlName="bio" type="text" class="form-control" id="bio"></textarea>
+      
+        <!-- <div class="col-md-6">
+          
+          <label for="profile-picture"><p class="btn btn-dark uploadText">Profile Picture<span class="material-icons">
+              file_upload
+              </span></p></label>
+          <input #profilePic type="file" (change)="selectFile($event)" class="form-control-file pic-input" style="display: none;" accept="image/png, image/jpg, image/jpeg" id="profile-picture">
+          <span *ngIf="url" id="close" class="material-icons" (click)="clearFile()">close</span>
+          <img id="pfpPreview" [src]="url" *ngIf="url">
+        </div> -->
+
+          <button type="submit" class="btn btn-dark submit" [disabled]="!createAccountForm.valid">Create Account</button>
+    </div>
+    <div class="text-danger" *ngIf="emailInvalid == true">
+      * Invalid email format. (Example: johndoe@test.com)
+    </div>
+    <div class="text-danger" *ngIf="createAccountForm.get('password')?.hasError('pattern')">
+      * Password must contain:
+      <ul>
+        <li>At least 8 characters</li>
+        <li>A lowercase letter</li>
+        <li>An uppercase letter</li>
+        <li>A number</li>
+        <li>A special character</li>
+      </ul>
+    </div>
+    <div class="text-danger" *ngIf="match == false">
+      * Passwords do not match!
+    </div>
+    <div class="text-danger" *ngIf="successful == false">
+      Error creating account! 
+    </div>
+    <!-- <p class="loadingIcon" *ngIf="loading == true">Loading...</p> -->
+
+  </form>

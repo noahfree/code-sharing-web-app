@@ -1,0 +1,51 @@
+img {
+    height: 25px;
+    width: 25px;
+    border-radius: 50px;
+}
+
+.navbar-toggler-icon {
+    color: white;
+}
+
+.navbar {
+    background-color: rgb(39, 39, 39);
+    position:sticky;
+    transition: 1s ease;
+}
+
+.navbar-loading {
+    margin: 10px 10px -15px;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.login-dropdown {
+    width: 300px;
+}
+
+.logout {
+    display: none;
+}
+
+.logOut {
+    cursor: pointer;
+}
+
+
+#scissors {
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
+@media (max-width: 992px){
+    .dropdown-menu{
+        position: relative;
+    }
+}
